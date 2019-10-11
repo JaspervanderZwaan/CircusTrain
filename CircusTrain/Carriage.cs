@@ -46,16 +46,8 @@ namespace CircusTrain
             return false;
         }
 
-        private int EqualOrBiggerCarnivoreCount(Animal animal)
-        {
-            return Animals.Where(animal_ => animal.Type == Type.carnivore).Select(animal_ => animal.Size).ToList()
-                            .Where(size => animal.Size <= size).Count();
-        }
+        private int EqualOrBiggerCarnivoreCount(Animal animal) => Animals.Where(animal_ => animal.Type == Type.carnivore).Select(animal_ => animal.Size).ToList().Where(size => animal.Size <= size).Count();
 
-        private int EqualOrSmallerHerbivoreCount(Animal animal)
-        {
-            return Animals.Where(animal_ => animal.Type == Type.herbivore).Select(animal_ => animal.Size).ToList()
-                .Where(size => animal.Size >= size).Count(); ;
-        }
+        private int EqualOrSmallerHerbivoreCount(Animal animal) => Animals.Where(animal_ => animal.Type == Type.herbivore).Select(animal_ => animal.Size).ToList().Where(size => animal.Size >= size).Count();
     }
 }

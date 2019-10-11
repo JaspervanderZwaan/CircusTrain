@@ -7,7 +7,15 @@ namespace CircusTrain
         private List<Carriage> Carriages { get; }
         public Train() => Carriages.Add(new Carriage());
 
-        public void AddAnimal(Animal animal)
+        public void AddAnimals(List<Animal> animals)
+        {
+            foreach (Animal animal in animals)
+            {
+                AddAnimal(animal);
+            }
+        }
+
+        private void AddAnimal(Animal animal)
         {
             foreach (Carriage carriage in Carriages)
             {
